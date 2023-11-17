@@ -4,10 +4,8 @@ metadata:
     name: webapp-srv
 spec:
     ports:
-        - port: 32777
-          targetPort: 80
-          protocol: TCP
-          name: http
+        - targetPort: 32777
+          port: 80
     selector:
         app: webapp-pod
-    type: NodePort
+

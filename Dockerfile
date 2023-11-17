@@ -6,10 +6,11 @@ WORKDIR /app
 # Копирование приложeния в рабочую директорию
 COPY app.py .
 
-# Установка Flask 
+# Установка Flask
 RUN pip install --no-cache-dir flask
 
-#EXPOSE 80
+EXPOSE 32777
 
 # При запуске контейнера его процессом будет работа приложения
 CMD [ "python", "app.py" ]
+

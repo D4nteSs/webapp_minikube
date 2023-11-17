@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
     name: webapp-deploy
 spec:
     replicas: 2
     selector:
-        matchLabels: 
+        matchLabels:
             app: webapp-pod
     template:
         metadata:
@@ -14,9 +14,8 @@ spec:
         spec:
             containers:
             - name: webapp-container
-              image: {{ .Values.image.repository }}
-              imagePullPolicy: Never
+              image: d4ntess/webapp_bio_v1:latest
               ports:
                   - name: http
-                    containerPort: 80
+                    containerPort: 32777
                     protocol: TCP
