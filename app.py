@@ -7,4 +7,4 @@ def hello_world():
     return '<h1 style="text-align: center; font-weight: bold; text-transform: uppercase;">Hello World</h1>'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=32777)
+    app.run(host='0.0.0.0', port=80)

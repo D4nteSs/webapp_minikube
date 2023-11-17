@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+    name: webapp-deploy
+spec:
+    replicas: 2
+    selector:
+        matchLabels: 
+            app: webapp-pod
+    template:
+        metadata:
+            labels:
+                app: webapp-pod
+        spec:
+            containers:
+            - name: webapp-container
+              image: {{ .Values.image.repository }}
+              imagePullPolicy: Never
+              ports:
+                  - name: http
+                    containerPort: 80
+                    protocol: TCP
